@@ -114,7 +114,7 @@ typedef struct dictType {
  */
 typedef struct dictht {
     
-    // 哈希表数组
+    // 哈希表数组，二维数组
     dictEntry **table;
 
     // 哈希表大小
@@ -140,7 +140,7 @@ typedef struct dict {
     // 私有数据
     void *privdata;
 
-    // 哈希表
+    // 哈希表，两个Hash表，交替使用，用于rehash操作
     dictht ht[2];
 
     // rehash 索引
